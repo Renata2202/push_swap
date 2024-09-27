@@ -6,36 +6,38 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 14:21:31 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/14 22:04:20 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/27 14:54:27 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void swap_top_two(t_stack *stack)
+void swap_top_two(t_stack **stack)
 {
-    if (stack->top != NULL && stack->top->next != NULL)
+    t_node *first;
+    t_node *second;
+    if ((*stack)->top != NULL && (*stack)->top->next != NULL)
     {
-        t_node *first;
-        t_node *second;
-
-        first = stack->top;
-        second = stack->top->next;
+        first = (*stack)->top;
+        second = (*stack)->top->next;
         first->next = second->next;
         second->next = first;
-        stack->top = second;
+        (*stack)->top = second;
     }
 }
-void sa(t_stack *a)
+void sa(t_stack **a)
 {
     swap_top_two(a);
+    ft_printf("sa\n");
 }
-void sb(t_stack *b)
+void sb(t_stack **b)
 {
     swap_top_two(b);
+    ft_printf("sb\n");
 }
-void sab(t_stack *a, t_stack *b)
+void ss(t_stack **a, t_stack **b)
 {
     swap_top_two(a);
     swap_top_two(b);
+    ft_printf("ss\n");
 }

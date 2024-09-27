@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 09:29:06 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/13 10:57:06 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/27 16:22:57 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ int is_valid_input(const char *input)
 
 bool has_repeated_numbers(t_stack *stack, int value)
 {
-    t_node  *current;
-
-    current = stack->top;
+    t_node *current = stack->top;
     while (current)
     {
         if (current->value == value)
@@ -46,4 +44,11 @@ bool has_repeated_numbers(t_stack *stack, int value)
         current = current->next;
     }
     return false;
+}
+int absolute_value(int n)
+{
+    if (n < 0)
+        return -n;
+    else
+        return n;
 }

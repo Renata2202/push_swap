@@ -6,16 +6,12 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/16 10:33:06 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/27 16:57:23 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-#define SWAP 1
-#define ROTATE 2
-#define REVERSE_ROTATE 3
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,47 +22,47 @@
 #include "printf/ft_printf.h"
 #include "libft/libft.h"
 
-// Definição da estrutura do nó
-// Definição da estrutura da pilha
 typedef struct s_node
 {
     int value;
     int position;
-    int dest_position;
+    int cost_a;
+    int cost_b;
+    int a_goal_position;
+    int target_position;
     struct s_node *next;
-} t_node;;
+} t_node;
 
 typedef struct s_stack
 {
     t_node *top;  // Campo para o topo da pilha baseada em nós
     t_node *last;  // Campo para o último nó da pilha
-    int *data;
     int size;
 }
 t_stack;
 
 // swap_functions.c
-void    swap_top_two(t_stack *stack);
-void    sa(t_stack *a);
-void    sb(t_stack *b);
-void    sab(t_stack *a, t_stack *b);
+void    swap_top_two(t_stack **stack);
+void    sa(t_stack **a);
+void    sb(t_stack **b);
+void    ss(t_stack **a, t_stack **b);
 
 // rotate_functions.c
-void    rotate(t_stack *stack);
-void    ra(t_stack *a);
-void    rb(t_stack *b);
-void    rr(t_stack *a, t_stack *b);
+void    rotate(t_stack **stack);
+void    ra(t_stack **a);
+void    rb(t_stack **b);
+void    rr(t_stack **a, t_stack **b);
 
 // reverse_rotate_functions.c
-void    reverse_rotate(t_stack *stack);
-void    rra(t_stack *a);
-void    rrb(t_stack *b);
-void    rrr(t_stack *a, t_stack *b);
+void    reverse_rotate(t_stack **stack);
+void    rra(t_stack **a);
+void    rrb(t_stack **b);
+void    rrr(t_stack **a, t_stack **b);
 
 // push_functions.c
-void    push_top(t_stack *a, t_stack *b);
-void    pa(t_stack *a, t_stack *b);
-void    pb(t_stack *a, t_stack *b);
+void    push_top(t_stack **a, t_stack **b);
+void    pa(t_stack **a, t_stack **b);
+void    pb(t_stack **a, t_stack **b);
 int     append(t_stack *stack, int value);
 
 // stack_functions.c
@@ -77,26 +73,37 @@ int     add_to_stack(t_stack *stack, char *arg);
 void    free_stack(t_stack *stack);
 
 // sort_stack_functions.c
-void    manage_smal_stack(t_stack *stack);
-void    sort_three_asc(t_stack *stack);
+void    manage_small_stack(t_stack **stack);
+void    sort_three_asc(t_stack **stack);
 bool    is_sorted_asc(t_stack *stack);
+void    manage_big_stack(t_stack **a, t_stack **b);
 
 //data_node_functions.c
 int     get_stack_size(t_stack *stack);
-int     find_dest_position_desc(t_stack *dest, int value_src);
-void    fill_positions(t_stack *a, t_stack *b);
-//int     best_price_position_asc(t_stack *a, t_stack *b, int position, int dest_position);
-//void    best_price_position_desc(t_stack *a, t_stack *b, int position, int dest_position);
-int     max(int a, int b);
-int     min(int a, int b);
+void    start_b(t_stack **a, t_stack **b);
+
+// move_functions.c
+void    send_values_to_b(t_stack **a, t_stack **b);
+void    get_value_position(t_stack **stack);
+void    do_cheapest_move(t_stack **stack_a, t_stack **stack_b);
+void    rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void    rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 //data_treatment_functions.c
 int     is_valid_input(const char *input);
 bool    has_repeated_numbers(t_stack *stack, int value);
 
-
 // push_swap.c
-int main(int argc, char **argv);
-void print_stack(t_stack *stack);
+int     main(int argc, char **argv);
+void    print_stack(t_stack *stack);
+int     process_stacks(t_stack *a, t_stack *b);
+int     absolute_value(int n);
+
+// fill_positions_functions.c
+void    fill_positions(t_stack **a, t_stack **b);
+void    fill_target_position(t_stack **stack);
+void    get_cost(t_stack **a, t_stack **b);
+int     get_min_position(t_stack *stack);
+int     get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_position);
 
 #endif // PUSH_SWAP_H
