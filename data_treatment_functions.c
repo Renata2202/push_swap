@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 18:11:12 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/28 19:33:24 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ bool has_repeated_numbers(t_stack *stack, int value)
             return true;
         current = current->next;
     }
-    return false;
+    return (false);
 }
 int absolute_value(int n)
 {
     if (n < 0)
-        return -n;
+        return (-n);
     else
-        return n;
+        return (n);
 }
