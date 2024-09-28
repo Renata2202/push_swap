@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   data_treatment_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/05 09:29:06 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:22:57 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:11:12 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#define ERROR_INVALID_CHARACTERS 1
 
-// Função para verificar se a string contém apenas números e delimitadores válidos
 int is_valid_input(const char *input)
 {
     while (*input)

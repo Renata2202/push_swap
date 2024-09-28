@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 16:16:54 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/28 17:48:42 by rnunes-a         ###   ########.fr       */
+/*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:37:25 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-t_node *create_node(int value)
+
+t_node  *create_node(int value)
 {
     t_node *new_node;
 
     new_node = (t_node *)malloc(sizeof(t_node));
     if (new_node == NULL)
     {
-        ft_printf("Error\n");
+         write (2, "Error\n", 6);
         return NULL;
     }
     new_node->value = value;
@@ -37,7 +38,7 @@ t_stack *create_stack()
     stack = (t_stack *)malloc(sizeof(t_stack));
     if (stack == NULL)
     {
-        ft_printf("Error\n");
+        write (2, "Error\n", 6);
         return NULL;
     }
     stack->top = NULL;
@@ -84,7 +85,7 @@ t_stack *initialize_stack(int argc, char **argv)
     stack = create_stack();
     if ((argc < 2) || (!stack))
     {
-        ft_printf("Error\n");
+        write (2, "Error\n", 6);
         return NULL;
     }
     while (i < argc)
@@ -98,7 +99,7 @@ t_stack *initialize_stack(int argc, char **argv)
     }
     return stack;
 }
-void free_stack(t_stack *stack)
+void    free_stack(t_stack *stack)
 {
     t_node *current = stack->top;
     t_node *next;

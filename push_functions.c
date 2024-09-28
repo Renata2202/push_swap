@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 12:36:18 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 14:51:17 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:27:08 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:27:17 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

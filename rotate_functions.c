@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/02 16:41:43 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 14:53:48 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:33:17 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:33:27 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

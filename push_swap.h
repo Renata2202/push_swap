@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:57:23 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/28 18:28:20 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-    t_node *top;  // Campo para o topo da pilha baseada em nós
-    t_node *last;  // Campo para o último nó da pilha
+    t_node *top;
+    t_node *last;
     int size;
 }
 t_stack;

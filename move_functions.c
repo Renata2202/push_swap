@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   move_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 13:20:33 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:11:16 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:26:39 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "push_swap.h"
 
-// send nodes from a to b - first smallest values then the biggest
-// preserve three biggest values in a
 void send_values_to_b(t_stack **a, t_stack **b)
 {
     int		size_a;
@@ -48,7 +45,7 @@ void get_value_position(t_stack **stack)
 
     if (stack == NULL || *stack == NULL)
     {
-        ft_printf("Error\n");
+        write (2, "Error\n", 6);
         return;
     }
     aux = (*stack)->top;
@@ -60,7 +57,6 @@ void get_value_position(t_stack **stack)
         {
             if (highest->value > biggest)
                 biggest = highest->value;
-
             highest = highest->next;
         }
         aux->position = biggest;
@@ -76,7 +72,6 @@ void do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 
     cost_a = 0;
     cost_b = 0;
-
     tmp = (*stack_b)->top;
     cheapest = INT_MAX;
     while (tmp)
@@ -114,7 +109,6 @@ void rotate_both(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
         }
     }
 }
-
 void rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b)
 {
     while (cost_a > 0)

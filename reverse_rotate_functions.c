@@ -5,18 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 13:28:25 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/28 14:06:24 by rnunes-a         ###   ########.fr       */
+/*   Created: 2024/09/28 18:32:44 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:32:53 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void reverse_rotate(t_stack **stack)
 {
     t_node *prev;
     t_node *current;
-    if (!(*stack) || !(*stack)->top || ! (*stack)->top->next)
-        return;
 
     prev = NULL;
     current = (*stack)->top;

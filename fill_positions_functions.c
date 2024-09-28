@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   fill_positions_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/21 19:32:39 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:23:17 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:11:30 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:25:14 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//preenche as posições na pilha a e b
+
 void fill_positions(t_stack **a, t_stack **b)
 {
     t_node *current;
@@ -112,7 +112,6 @@ int get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_position)
     }
     return a_goal_position;
 }
-
 int get_min_position(t_stack *stack)
 {
     t_node *current = stack->top;

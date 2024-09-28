@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/06 16:46:18 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:07:00 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 18:34:20 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void manage_small_stack(t_stack **stack)
 {
     if (is_sorted_asc(*stack))
@@ -60,7 +61,6 @@ bool is_sorted_asc(t_stack *stack)
     }
     return true;
 }
-
 void manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 {
     send_values_to_b(stack_a, stack_b);
@@ -69,7 +69,6 @@ void manage_big_stack(t_stack **stack_a, t_stack **stack_b)
         get_cost(stack_a, stack_b);
         do_cheapest_move(stack_a, stack_b);
     }
-
     while (!is_sorted_asc(*stack_a))
     {
         if ((*stack_a)->top->target_position > ((get_stack_size(*stack_a))/2))
@@ -78,7 +77,6 @@ void manage_big_stack(t_stack **stack_a, t_stack **stack_b)
             rra(stack_a);
     }
 }
-
 int process_stacks(t_stack *a, t_stack *b)
 {
     if (get_stack_size(a) <= 3)
