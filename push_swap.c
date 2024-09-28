@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:25 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 17:00:01 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/28 14:15:55 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 int main(int argc, char **argv)
 {
     t_stack *a;
@@ -26,6 +27,8 @@ int main(int argc, char **argv)
         free_stack(a);
         return 1;
     }
+    if (is_sorted_asc(a))
+        return 0;
     if (get_stack_size(a) <= 3)
     {
         manage_small_stack(&a);

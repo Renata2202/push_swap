@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 16:16:54 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 16:00:34 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/28 17:48:42 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,14 @@ int add_to_stack(t_stack *stack, char *arg)
     value = ft_atoi(arg);
     if (has_repeated_numbers(stack, value))
     {
-        ft_printf("Error\n");
+        write(2,"Error\n", 6);
         return 0;
     }
     t_node *new_node = create_node(value);
     if (new_node == NULL)
     {
-        ft_printf("Error\n");
-        return 0; // Falha na criação do nó
+        write(2,"Error\n", 6);
+        return 0;
     }
     if (stack->top == NULL)
     {

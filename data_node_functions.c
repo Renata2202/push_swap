@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_node_functions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 22:49:20 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/25 13:04:30 by renatanaesi      ###   ########.fr       */
+/*   Created: 2024/09/28 17:54:16 by rnunes-a          #+#    #+#             */
+/*   Updated: 2024/09/28 17:56:32 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

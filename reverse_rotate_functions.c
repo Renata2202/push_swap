@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 13:28:25 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/27 14:53:06 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/28 14:06:24 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void rrr(t_stack **a, t_stack **b)
 {
     reverse_rotate(a);
     reverse_rotate(b);
-    ft_printf("rrr/n");
+    ft_printf("rrr\n");
 }
