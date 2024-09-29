@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 13:05:07 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 17:00:09 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_node	*create_node(int val)
 	new_node->cost_a = 0;
 	new_node->cost_b = 0;
 	new_node->a_goal_pos = 0;
-	new_node->target_pos = 0;
+	new_node->trg_pos = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -51,43 +51,43 @@ t_stack	*create_stack()
 
 int check_input(t_stack *stack, char *arg, int *val)
 {
-    if (!is_valid_input(arg))
-        return (0);
-    *val = ft_atoi(arg);
-    if (has_repeated_numbers(stack, *val))
-    {
-        write(2, "Error\n", 6);
-        return (0);
-    }
-    return (1);
+	if (!is_valid_input(arg))
+		return (0);
+	*val = ft_atoi(arg);
+	if (has_repeated_numbers(stack, *val))
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	return (1);
 }
 
 int add_to_stack(t_stack *stack, char *arg)
 {
-    int val;
-    t_node *new_node;
+	int val;
+	t_node *new_node;
 
-    if (!check_input(stack, arg, &val))
-        return (0);
+	if (!check_input(stack, arg, &val))
+		return (0);
 
-    new_node = create_node(val);
-    if (new_node == NULL)
-    {
-        write(2, "Error\n", 6);
-        return (0);
-    }
-    if (stack->top == NULL)
-    {
-        stack->top = new_node;
-        stack->last = new_node;
-    }
-    else
-    {
-        stack->last->next = new_node;
-        stack->last = new_node;
-    }
-    stack->size++;
-    return (1);
+	new_node = create_node(val);
+	if (new_node == NULL)
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	if (stack->top == NULL)
+	{
+		stack->top = new_node;
+		stack->last = new_node;
+	}
+	else
+	{
+		stack->last->next = new_node;
+		stack->last = new_node;
+	}
+	stack->size++;
+	return (1);
 }
 
 t_stack	*initialize_stack(int argc, char **argv)

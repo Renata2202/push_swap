@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 13:04:55 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 17:02:34 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	manage_stacks(&a, &b);
+	print_stack (a);
 }
 
 void	manage_stacks(t_stack **a, t_stack **b)
@@ -57,13 +58,13 @@ void	print_stack(t_stack *stack)
 
 	if (stack == NULL)
 	{
-		printf("stack is NULL\n");
+		ft_printf("stack is NULL\n");
 		return ;
 	}
 	current = stack->top;
 	while (current != NULL)
 	{
-		printf ("%d\n",current->val);
+		ft_printf ("%d\n", current->val);
 		current = current->next;
 	}
 }

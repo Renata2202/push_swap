@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 12:51:43 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 16:58:17 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (!is_sorted_asc(*stack_a))
 	{
-		if ((*stack_a)->top->target_pos > ((get_stack_size (*stack_a)) / 2))
+		if ((*stack_a)->top->trg_pos > ((get_stack_size (*stack_a)) / 2))
 			ra(stack_a);
 		else
 			rra(stack_a);

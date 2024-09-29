@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_positions_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:30 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 12:53:24 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 17:12:51 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	fill_target_position(t_stack **stack)
 		max_node = NULL;
 		while (iter_node)
 		{
-			if (iter_node->val > biggest && iter_node->target_pos == 0)
+			if (iter_node->val > biggest && iter_node->trg_pos == 0)
 			{
 				biggest = iter_node->val;
 				max_node = iter_node;
@@ -58,7 +58,7 @@ void	fill_target_position(t_stack **stack)
 			iter_node = iter_node->next;
 		}
 		if (max_node)
-			max_node->target_pos = temp_pos;
+			max_node->trg_pos = temp_pos;
 		temp_pos--;
 	}
 }
@@ -78,7 +78,7 @@ void	get_cost(t_stack **a, t_stack **b)
 		temp_b->cost_b = temp_b->position;
 		if (temp_b->position > size_b / 2)
 			temp_b->cost_b = (size_b - temp_b->position) * -1;
-		temp_b->a_goal_pos = get_target_in_a(a, temp_b->target_pos, temp_b->a_goal_pos);
+		temp_b->a_goal_pos = get_trg_a(a, temp_b->trg_pos, temp_b->a_goal_pos);
 		temp_b->cost_a = temp_b->a_goal_pos;
 		if (temp_b->a_goal_pos > size_a / 2)
 			temp_b->cost_a = (size_a - temp_b->a_goal_pos) * -1;
@@ -86,7 +86,7 @@ void	get_cost(t_stack **a, t_stack **b)
 	}
 }
 
-int	get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_pos)
+int	get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos)
 {
 	t_node	*tmp_a;
 	int		target_position;
@@ -95,10 +95,10 @@ int	get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_pos)
 	target_position = INT_MAX;
 	while (tmp_a)
 	{
-		if (tmp_a->target_pos > b_targ_pos && tmp_a->target_pos < target_position)
+		if (tmp_a->trg_pos > b_targ_pos && tmp_a->trg_pos < target_position)
 		{
-			target_position = tmp_a->target_pos;
-			a_goal_pos= tmp_a->position;
+			target_position = tmp_a->trg_pos;
+			a_goal_pos = tmp_a->position;
 		}
 		tmp_a = tmp_a->next;
 	}
@@ -107,9 +107,9 @@ int	get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_pos)
 	tmp_a = (*a)->top;
 	while (tmp_a)
 	{
-		if (tmp_a->target_pos < target_position)
+		if (tmp_a->trg_pos < target_position)
 		{
-			target_position = tmp_a->target_pos;
+			target_position = tmp_a->trg_pos;
 			a_goal_pos = tmp_a->position;
 		}
 		tmp_a = tmp_a->next;

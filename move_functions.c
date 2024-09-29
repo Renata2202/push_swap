@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 12:54:13 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 16:50:59 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	send_values_to_b(t_stack **a, t_stack **b)
 	size_b = 0;
 	while (size_a > 3 && size_b < size_a / 2)
 	{
-		if ((*a)->top->target_pos <= size_a / 2)
+		if ((*a)->top->trg_pos <= size_a / 2)
 		{
 			pb(a, b);
 			size_a--;

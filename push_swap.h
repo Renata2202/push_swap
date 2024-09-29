@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/29 13:03:49 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 17:06:03 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_node
 	int		cost_a;
 	int		cost_b;
 	int		a_goal_pos;
-	int		target_pos;
+	int		trg_pos;
 	struct s_node		*next;
 }	t_node;
 
@@ -105,6 +105,6 @@ void	fill_positions(t_stack **a, t_stack **b);
 void	fill_target_position(t_stack **stack);
 void	get_cost(t_stack **a, t_stack **b);
 int		get_min_position(t_stack *stack);
-int		get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_pos);
+int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos);
 
 #endif // PUSH_SWAP_H
