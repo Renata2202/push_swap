@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:08 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 12:52:27 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 18:03:11 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	push_top(t_stack **src, t_stack **dest)
 void	pa(t_stack **a, t_stack **b)
 {
 	push_top(b, a);
-	ft_printf("pa\n");
+	write (2, "pa\n", 3);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push_top(a, b);
-	ft_printf("pb\n");
+	write (2, "pb\n", 3);
 }
 
 int	append(t_stack *stack, int val)

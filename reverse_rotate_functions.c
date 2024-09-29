@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:32:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 20:43:17 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:50:04 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ void	reverse_rotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
-	ft_printf("rra\n");
+	write (2, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
-	ft_printf("rrb\n");
+	write (2, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);
 	reverse_rotate(b);
-	ft_printf("rrr\n");
+	write (2, "rrr\n", 4);
 }

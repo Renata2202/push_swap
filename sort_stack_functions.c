@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 16:58:17 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 18:49:55 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,28 @@ void	manage_small_stack(t_stack **stack)
 
 void	sort_three_asc(t_stack **stack)
 {
-	t_node	*first;
-	t_node	*second;
-	t_node	*third;
+	int	first;
+	int	second;
+	int	third;
 
-	first = (*stack)->top;
-	second = first->next;
-	third = second->next;
-	if (first->val < second->val && first->val < third->val && second->val > third->val)
+	first = (*stack)->top->val;
+	second = (*stack)->top->next->val;
+	third = (*stack)->top->next->next->val;
+	if (first < second && first < third && second > third)
 	{
 		sa(stack);
 		ra(stack);
 	}
-	else if (first->val < second->val && first->val > third->val && second->val > third->val)
+	else if (first < second && first > third && second > third)
 		rra(stack);
-	else if (first->val > second->val && first->val < third->val && second->val < third->val)
+	else if (first > second && first < third && second < third)
 		sa(stack);
-	else if (first->val > second->val && first->val > third->val && second->val > third->val)
+	else if (first > second && first > third && second > third)
 	{
 		sa(stack);
 		rra(stack);
 	}
-	else if (first->val > second->val && first->val > third->val && second->val < third->val)
+	else if (first > second && first > third && second < third)
 		ra(stack);
 	return ;
 }

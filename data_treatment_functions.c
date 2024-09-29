@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_treatment_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 12:49:42 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 18:14:07 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool	has_repeated_numbers(t_stack *stack, int value)
 	return (false);
 }
 
-int	absolute_value(int n)
+int	absol_value(int n)
 {
 	if (n < 0)
 		return (-n);

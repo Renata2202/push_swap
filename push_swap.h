@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/29 17:06:03 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 18:57:42 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@
 # include <limits.h>
 # include <stdbool.h>
 
-# include "printf/ft_printf.h"
 # include "libft/libft.h"
 
 typedef struct s_node
 {
-	int		val;
-	int		position;
-	int		cost_a;
-	int		cost_b;
-	int		a_goal_pos;
-	int		trg_pos;
-	struct s_node		*next;
+	int				val;
+	int				position;
+	int				cost_a;
+	int				cost_b;
+	int				a_goal_pos;
+	int				trg_pos;
+	struct s_node	*next;
 }	t_node;
 
 typedef struct s_stack
@@ -66,7 +65,7 @@ int		append(t_stack *stack, int val);
 
 // stack_functions.c
 t_node	*create_node(int val);
-t_stack	*create_stack();
+void	create_stack(t_stack **stack);
 t_stack	*initialize_stack(int argc, char **argv);
 int		add_to_stack(t_stack *stack, char *arg);
 int		check_input(t_stack *stack, char *arg, int *val);
@@ -92,12 +91,12 @@ void	rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b);
 //data_treatment_functions.c
 int		is_valid_input(const char *input);
 bool	has_repeated_numbers(t_stack *stack, int val);
+int		absol_value(int n);
 
 // push_swap.c
 int		main(int argc, char **argv);
 void	print_stack(t_stack *stack);
 void	manage_stacks(t_stack **a, t_stack **b);
-int		absolute_value(int n);
 void	free_stack(t_stack *stack);
 
 // fill_positions_functions.c

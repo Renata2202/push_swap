@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 17:02:34 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:30:42 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	a = initialize_stack(argc, argv);
 	if (a == NULL)
 		return (1);
-	b = create_stack();
+	create_stack(&b);
 	if (b == NULL)
 	{
 		free_stack(a);
@@ -58,13 +58,13 @@ void	print_stack(t_stack *stack)
 
 	if (stack == NULL)
 	{
-		ft_printf("stack is NULL\n");
+		printf("stack is NULL\n");
 		return ;
 	}
 	current = stack->top;
 	while (current != NULL)
 	{
-		ft_printf ("%d\n", current->val);
+		printf ("%d\n", current->val);
 		current = current->next;
 	}
 }

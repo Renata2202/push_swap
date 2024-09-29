@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 17:00:09 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:34:36 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,19 @@ t_node	*create_node(int val)
 	return (new_node);
 }
 
-t_stack	*create_stack()
+void	create_stack(t_stack **stack)
 {
-	t_stack	*stack;
-
-	stack = (t_stack *)malloc(sizeof(t_stack));
+	*stack = (t_stack *)malloc(sizeof(t_stack));
 	if (stack == NULL)
 	{
 		write (2, "Error\n", 6);
-		return (NULL);
 	}
-	stack->top = NULL;
-	stack->last = NULL;
-	stack->size = 0;
-	return (stack);
+	(*stack)->top = NULL;
+	(*stack)->last = NULL;
+	(*stack)->size = 0;
 }
 
-
-int check_input(t_stack *stack, char *arg, int *val)
+int	check_input(t_stack *stack, char *arg, int *val)
 {
 	if (!is_valid_input(arg))
 		return (0);
@@ -62,14 +57,13 @@ int check_input(t_stack *stack, char *arg, int *val)
 	return (1);
 }
 
-int add_to_stack(t_stack *stack, char *arg)
+int	add_to_stack(t_stack *stack, char *arg)
 {
-	int val;
-	t_node *new_node;
+	int		val;
+	t_node	*new_node;
 
 	if (!check_input(stack, arg, &val))
 		return (0);
-
 	new_node = create_node(val);
 	if (new_node == NULL)
 	{
@@ -96,7 +90,8 @@ t_stack	*initialize_stack(int argc, char **argv)
 	t_stack	*stack;
 
 	i = 1;
-	stack = create_stack();
+	stack = NULL;
+	create_stack(&stack);
 	if ((argc < 2) || (!stack))
 	{
 		write (2, "Error\n", 6);

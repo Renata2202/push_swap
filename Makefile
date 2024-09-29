@@ -6,15 +6,13 @@
 #    By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:25:27 by rnunes-a          #+#    #+#              #
-#    Updated: 2024/09/28 18:25:34 by rnunes-a         ###   ########.fr        #
+#    Updated: 2024/09/29 18:01:29 by rnunes-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 LIBFT = ./libft/libft.a
 LIBFT_DIR = ./libft
-PRINTF = ./printf/libftprintf.a
-PRINTF_DIR = ./printf
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = push_swap.c swap_functions.c stack_functions.c rotate_functions.c \
@@ -31,8 +29,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C $(LIBFT_DIR)
-	$(MAKE) -C $(PRINTF_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 	chmod +x $(NAME)
 
 %.o: %.c
@@ -40,12 +37,10 @@ $(NAME): $(OBJS)
 
 clean:
 	$(MAKE) clean -C $(LIBFT_DIR)
-	$(MAKE) clean -C $(PRINTF_DIR)
 	$(RM) $(OBJS)
 
 fclean: clean
 	$(MAKE) fclean -C $(LIBFT_DIR)
-	$(MAKE) fclean -C $(PRINTF_DIR)
 	$(RM) $(NAME)
 
 re: fclean all
