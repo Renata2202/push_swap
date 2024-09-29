@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/28 20:41:09 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 10:56:45 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ bool	has_repeated_numbers(t_stack *stack, int value);
 // push_swap.c
 int		main(int argc, char **argv);
 void	print_stack(t_stack *stack);
-int		process_stacks(t_stack *a, t_stack *b);
+void	manage_stacks(t_stack **a, t_stack **b);
 int		absolute_value(int n);
 
 // fill_positions_functions.c

@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 10:34:37 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 11:03:28 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	main(int argc, char **argv)
 		free_stack(a);
 		return (1);
 	}
-	if (is_sorted_asc(a))
+	manage_stacks(&a, &b);
+	/*if (is_sorted_asc(a))
 	{
 		free_stack(b);
 		free_stack(a);
@@ -43,7 +44,27 @@ int	main(int argc, char **argv)
 	}
 	fill_target_position(&a);
 	manage_big_stack(&a, &b);
-	return (0);
+	return (0);*/
+}
+
+void	manage_stacks(t_stack **a, t_stack **b)
+{
+	if (is_sorted_asc(*a))
+	{
+		free_stack(*b);
+		free_stack(*a);
+		return ;
+	}
+	if (get_stack_size(*a) <= 3)
+	{
+		manage_small_stack(a);
+		free_stack(*b);
+		free_stack(*a);
+		return ;
+	}
+	fill_target_position(a);
+	manage_big_stack(a, b);
+	return ;
 }
 
 void	print_stack(t_stack *stack)
