@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:08 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 20:13:20 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 12:52:27 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	pb(t_stack **a, t_stack **b)
 	ft_printf("pb\n");
 }
 
-int	append(t_stack *stack, int value)
+int	append(t_stack *stack, int val)
 {
 	t_node	*new_node;
 	t_node	*current;
 
-	new_node = create_node(value);
+	new_node = create_node(val);
 	if (!new_node)
 		return (0);
 	if (stack->top == NULL)

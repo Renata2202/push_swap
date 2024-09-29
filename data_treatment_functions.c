@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_treatment_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 19:47:11 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 12:49:42 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	has_repeated_numbers(t_stack *stack, int value)
 	current = stack->top;
 	while (current)
 	{
-		if (current->value == value)
+		if (current->val == value)
 			return (true);
 		current = current->next;
 	}

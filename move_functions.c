@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_functions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 20:09:18 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 12:54:13 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	send_values_to_b(t_stack **a, t_stack **b)
 	size_b = 0;
 	while (size_a > 3 && size_b < size_a / 2)
 	{
-		if ((*a)->top->target_position <= size_a / 2)
+		if ((*a)->top->target_pos <= size_a / 2)
 		{
 			pb(a, b);
 			size_a--;
@@ -53,11 +53,11 @@ void	get_value_position(t_stack **stack)
 	while (aux != NULL)
 	{
 		highest = aux;
-		biggest = aux->value;
+		biggest = aux->val;
 		while (highest != NULL)
 		{
-			if (highest->value > biggest)
-				biggest = highest->value;
+			if (highest->val > biggest)
+				biggest = highest->val;
 			highest = highest->next;
 		}
 		aux->position = biggest;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/28 21:04:08 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/29 12:51:43 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void	sort_three_asc(t_stack **stack)
 	first = (*stack)->top;
 	second = first->next;
 	third = second->next;
-	if (first->value < second->value && first->value < third->value && second->value > third->value)
+	if (first->val < second->val && first->val < third->val && second->val > third->val)
 	{
 		sa(stack);
 		ra(stack);
 	}
-	else if (first->value < second->value && first->value > third->value && second->value > third->value)
+	else if (first->val < second->val && first->val > third->val && second->val > third->val)
 		rra(stack);
-	else if (first->value > second->value && first->value < third->value && second->value < third->value)
+	else if (first->val > second->val && first->val < third->val && second->val < third->val)
 		sa(stack);
-	else if (first->value > second->value && first->value > third->value && second->value > third->value)
+	else if (first->val > second->val && first->val > third->val && second->val > third->val)
 	{
 		sa(stack);
 		rra(stack);
 	}
-	else if (first->value > second->value && first->value > third->value && second->value < third->value)
+	else if (first->val > second->val && first->val > third->val && second->val < third->val)
 		ra(stack);
 	return ;
 }
@@ -63,7 +63,7 @@ bool	is_sorted_asc(t_stack *stack)
 	current = stack->top;
 	while (current != NULL && current->next != NULL)
 	{
-		if (current->value > current->next->value)
+		if (current->val > current->next->val)
 			return (false);
 		current = current->next;
 	}
@@ -80,7 +80,7 @@ void	manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (!is_sorted_asc(*stack_a))
 	{
-		if ((*stack_a)->top->target_position > ((get_stack_size (*stack_a)) / 2))
+		if ((*stack_a)->top->target_pos > ((get_stack_size (*stack_a)) / 2))
 			ra(stack_a);
 		else
 			rra(stack_a);

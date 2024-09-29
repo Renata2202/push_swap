@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/29 10:56:45 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/29 13:03:49 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@
 
 typedef struct s_node
 {
-	int		value;
+	int		val;
 	int		position;
 	int		cost_a;
 	int		cost_b;
-	int		a_goal_position;
-	int		target_position;
+	int		a_goal_pos;
+	int		target_pos;
 	struct s_node		*next;
 }	t_node;
 
@@ -62,13 +62,14 @@ void	rrr(t_stack **a, t_stack **b);
 void	push_top(t_stack **a, t_stack **b);
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
-int		append(t_stack *stack, int value);
+int		append(t_stack *stack, int val);
 
 // stack_functions.c
-t_node	*create_node(int value);
+t_node	*create_node(int val);
 t_stack	*create_stack();
 t_stack	*initialize_stack(int argc, char **argv);
 int		add_to_stack(t_stack *stack, char *arg);
+int		check_input(t_stack *stack, char *arg, int *val);
 void	free_stack(t_stack *stack);
 
 // sort_stack_functions.c
@@ -90,19 +91,20 @@ void	rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 //data_treatment_functions.c
 int		is_valid_input(const char *input);
-bool	has_repeated_numbers(t_stack *stack, int value);
+bool	has_repeated_numbers(t_stack *stack, int val);
 
 // push_swap.c
 int		main(int argc, char **argv);
 void	print_stack(t_stack *stack);
 void	manage_stacks(t_stack **a, t_stack **b);
 int		absolute_value(int n);
+void	free_stack(t_stack *stack);
 
 // fill_positions_functions.c
 void	fill_positions(t_stack **a, t_stack **b);
 void	fill_target_position(t_stack **stack);
 void	get_cost(t_stack **a, t_stack **b);
 int		get_min_position(t_stack *stack);
-int		get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_position);
+int		get_target_in_a(t_stack **a, int b_targ_pos, int a_goal_pos);
 
 #endif // PUSH_SWAP_H
