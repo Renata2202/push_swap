@@ -6,7 +6,7 @@
 #    By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:25:27 by rnunes-a          #+#    #+#              #
-#    Updated: 2024/09/30 15:17:34 by renatanaesi      ###   ########.fr        #
+#    Updated: 2024/09/30 15:45:05 by renatanaesi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = push_swap.c swap_functions.c stack_functions.c rotate_functions.c \
        push_functions.c sort_stack_functions.c reverse_rotate_functions.c\
-	   data_treatment_functions.c move_functions.c\
+	   data_treatment_functions.c move_functions.c find_target_functions.c\
 	   fill_positions_functions.c
 
 OBJS = $(SRCS:.c=.o)

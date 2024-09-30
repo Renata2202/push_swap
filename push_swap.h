@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/30 15:17:16 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 15:48:40 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	create_stack(t_stack **stack);
 t_stack	*initialize_stack(int argc, char **argv);
 int		add_to_stack(t_stack *stack, char *arg);
 int		check_input(t_stack *stack, char *arg, int *val);
-void	free_stack(t_stack *stack);
 
 // sort_stack_functions.c
 void	manage_small_stack(t_stack **stack);
@@ -90,6 +89,11 @@ int		ft_atoi(const char *nptr);
 bool	has_repeated_numbers(t_stack *stack, int val);
 int		absol_value(int n);
 
+// find_target_functions.c
+int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos);
+int		find_target_greater(t_stack **a, int b_targ_pos, int *a_goal_pos);
+int		find_target_lesser(t_stack **a, int *a_goal_pos);
+
 // push_swap.c
 int		main(int argc, char **argv);
 void	print_stack(t_stack *stack);
@@ -102,6 +106,6 @@ void	fill_positions(t_stack **a, t_stack **b);
 void	fill_target_position(t_stack **stack);
 void	get_cost(t_stack **a, t_stack **b);
 int		get_min_position(t_stack *stack);
-int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos);
+//int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos);
 
 #endif // PUSH_SWAP_H

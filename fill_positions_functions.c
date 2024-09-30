@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_positions_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:30 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 17:12:51 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:49:29 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,37 +84,6 @@ void	get_cost(t_stack **a, t_stack **b)
 			temp_b->cost_a = (size_a - temp_b->a_goal_pos) * -1;
 		temp_b = temp_b->next;
 	}
-}
-
-int	get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos)
-{
-	t_node	*tmp_a;
-	int		target_position;
-
-	tmp_a = (*a)->top;
-	target_position = INT_MAX;
-	while (tmp_a)
-	{
-		if (tmp_a->trg_pos > b_targ_pos && tmp_a->trg_pos < target_position)
-		{
-			target_position = tmp_a->trg_pos;
-			a_goal_pos = tmp_a->position;
-		}
-		tmp_a = tmp_a->next;
-	}
-	if (target_position != INT_MAX)
-		return (a_goal_pos);
-	tmp_a = (*a)->top;
-	while (tmp_a)
-	{
-		if (tmp_a->trg_pos < target_position)
-		{
-			target_position = tmp_a->trg_pos;
-			a_goal_pos = tmp_a->position;
-		}
-		tmp_a = tmp_a->next;
-	}
-	return (a_goal_pos);
 }
 
 int	get_min_position(t_stack *stack)
