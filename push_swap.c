@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 11:19:32 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 15:16:05 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,34 @@ void	manage_stacks(t_stack **a, t_stack **b)
 	return ;
 }
 
+void	free_stack(t_stack *stack)
+{
+	t_node	*current;
+	t_node	*next;
+
+	current = stack->top;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	free(stack);
+}
+int	get_stack_size(t_stack *stack)
+{
+	int		size;
+	t_node	*current;
+
+	size = 0;
+	current = stack->top;
+	while (current)
+	{
+		size++;
+		current = current->next;
+	}
+	return (size);
+}
 void	print_stack(t_stack *stack)
 {
 	t_node	*current;
@@ -66,19 +94,4 @@ void	print_stack(t_stack *stack)
 		printf ("%d\n", current->val);
 		current = current->next;
 	}
-}
-
-void	free_stack(t_stack *stack)
-{
-	t_node	*current;
-	t_node	*next;
-
-	current = stack->top;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	free(stack);
 }

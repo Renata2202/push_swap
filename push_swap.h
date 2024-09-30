@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/30 14:08:56 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 15:17:16 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,6 @@ void	manage_small_stack(t_stack **stack);
 void	sort_three_asc(t_stack **stack);
 bool	is_sorted_asc(t_stack *stack);
 void	manage_big_stack(t_stack **a, t_stack **b);
-
-//data_node_functions.c
-int		get_stack_size(t_stack *stack);
 void	start_b(t_stack **a, t_stack **b);
 
 // move_functions.c
@@ -98,6 +95,7 @@ int		main(int argc, char **argv);
 void	print_stack(t_stack *stack);
 void	manage_stacks(t_stack **a, t_stack **b);
 void	free_stack(t_stack *stack);
+int		get_stack_size(t_stack *stack);
 
 // fill_positions_functions.c
 void	fill_positions(t_stack **a, t_stack **b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 18:49:55 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 15:13:58 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,19 +86,24 @@ void	manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 			rra(stack_a);
 	}
 }
-
-int	process_stacks(t_stack *a, t_stack *b)
+void	start_b(t_stack **a, t_stack **b)
 {
-	if (get_stack_size(a) <= 3)
+	int	size_a;
+	int	size_b;
+
+	size_a = get_stack_size(*a);
+	size_b = 0;
+	while (size_a > 3 && size_b < size_a / 2 && size_b <= 3)
 	{
-		manage_small_stack(&a);
-		free_stack(a);
-		free_stack(b);
-		return (0);
+		if ((*a)->top->position <= size_a / 2)
+		{
+			pb(a, b);
+			size_a--;
+			size_b++;
+		}
+		else
+		{
+			ra(a);
+		}
 	}
-	fill_target_position(&a);
-	manage_big_stack(&a, &b);
-	free_stack(a);
-	free_stack(b);
-	return (0);
 }
