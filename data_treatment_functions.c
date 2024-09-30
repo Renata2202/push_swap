@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 12:54:43 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 13:23:15 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sinal;
-	int	soma;
+	long long	soma;
 
 	i = 0;
 	sinal = 1;
