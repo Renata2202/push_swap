@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/30 12:48:42 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 14:08:56 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 //data_treatment_functions.c
 int		is_valid_input(const char *input);
+int		is_in_int_range(const char *arg);
 int		ft_atoi(const char *nptr);
 bool	has_repeated_numbers(t_stack *stack, int val);
 int		absol_value(int n);

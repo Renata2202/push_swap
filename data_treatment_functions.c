@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 13:39:13 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 14:11:03 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,37 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		soma = ((nptr[i] - '0') + (soma * 10));
-		if ((sinal == 1 && soma > INT_MAX) || (sinal == -1 && soma < INT_MIN))
-			return (0);
 		i++;
 	}
 	return ((int)(soma * sinal));
 }
 
+int	is_in_int_range(const char *arg)
+{
+    long long result = 0;
+    int sign = 1;
+    const long long int_min = (long long)INT_MIN;
+    const long long int_max = (long long)INT_MAX;
+
+    if (*arg == '-' || *arg == '+')
+    {
+        if (*arg == '-')
+            sign = -1;
+        arg++;
+    }
+    while (*arg)
+    {
+        if (*arg < '0' || *arg > '9')
+            return (0);
+        result = result * 10 + (*arg - '0');
+        if (sign == 1 && result > int_max)
+            return (0);
+        if (sign == -1 && -result < int_min)
+            return (0);
+        arg++;
+    }
+    return (1);
+}
 
 bool	has_repeated_numbers(t_stack *stack, int value)
 {

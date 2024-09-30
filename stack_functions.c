@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 14:03:10 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 14:09:27 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,25 @@ void	create_stack(t_stack **stack)
 
 int	check_input(t_stack *stack, char *arg, int *val)
 {
-	if (!is_valid_input(arg))
-		return (0);
-	*val = ft_atoi(arg);
-	if (*val == 0 && (arg[0] != '0' && arg[1] != '\0'))
+    if (!is_valid_input(arg))
+        return (0);
+    *val = ft_atoi(arg);
+    if (!is_in_int_range(arg))
     {
         write(2, "Error\n", 6);
         return (0);
     }
-	if (*val == INT_MIN && strcmp(arg, "-2147483648") != 0)
+    if (*val == 0 && (arg[0] != '0' || arg[1] != '\0'))
     {
         write(2, "Error\n", 6);
         return (0);
     }
-	if (has_repeated_numbers(stack, *val))
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
-	return (1);
+    if (has_repeated_numbers(stack, *val))
+    {
+        write(2, "Error\n", 6);
+        return (0);
+    }
+    return (1);
 }
 
 int	add_to_stack(t_stack *stack, char *arg)
