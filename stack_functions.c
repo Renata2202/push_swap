@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 14:09:27 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 14:49:28 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,6 @@ int	check_input(t_stack *stack, char *arg, int *val)
         return (0);
     *val = ft_atoi(arg);
     if (!is_in_int_range(arg))
-    {
-        write(2, "Error\n", 6);
-        return (0);
-    }
-    if (*val == 0 && (arg[0] != '0' || arg[1] != '\0'))
     {
         write(2, "Error\n", 6);
         return (0);
