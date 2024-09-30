@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+         #
+#    By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:25:27 by rnunes-a          #+#    #+#              #
-#    Updated: 2024/09/30 15:45:05 by renatanaesi      ###   ########.fr        #
+#    Updated: 2024/09/30 18:08:29 by rnunes-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

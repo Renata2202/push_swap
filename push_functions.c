@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:08 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 18:03:11 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:13:28 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	push_top(t_stack **src, t_stack **dest)
 void	pa(t_stack **a, t_stack **b)
 {
 	push_top(b, a);
-	write (2, "pa\n", 3);
+	write (1, "pa\n", 3);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
 	push_top(a, b);
-	write (2, "pb\n", 3);
+	write (1, "pb\n", 3);
 }
 
 int	append(t_stack *stack, int val)

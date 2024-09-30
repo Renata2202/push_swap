@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_functions.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 14:49:28 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 17:19:02 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	create_stack(t_stack **stack)
 	if (stack == NULL)
 	{
 		write (2, "Error\n", 6);
+		return ;
 	}
 	(*stack)->top = NULL;
 	(*stack)->last = NULL;
