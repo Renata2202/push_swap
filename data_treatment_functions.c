@@ -6,7 +6,7 @@
 /*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 13:23:15 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/09/30 13:39:13 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_valid_input(const char *input)
 {
 	while (*input)
 	{
-		if (*input == ' ' || *input == '\n' || *input == '\t' || *input == '"')
+		if (*input == ' ' || *input == '\n' || *input == '\t')
 			input++;
 		else if (*input == '-' || *input == '+')
 		{
@@ -39,7 +39,6 @@ int	is_valid_input(const char *input)
 }
 
 int	ft_atoi(const char *nptr)
-
 {
 	int	i;
 	int	sinal;
@@ -60,10 +59,7 @@ int	ft_atoi(const char *nptr)
 	{
 		soma = ((nptr[i] - '0') + (soma * 10));
 		if ((sinal == 1 && soma > INT_MAX) || (sinal == -1 && soma < INT_MIN))
-		{
-			write (2, "Error\n", 6);
 			return (0);
-		}
 		i++;
 	}
 	return ((int)(soma * sinal));
