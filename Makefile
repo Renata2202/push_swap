@@ -3,16 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+         #
+#    By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 18:25:27 by rnunes-a          #+#    #+#              #
-#    Updated: 2024/09/29 18:01:29 by rnunes-a         ###   ########.fr        #
+#    Updated: 2024/09/30 12:46:15 by renatanaesi      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-LIBFT = ./libft/libft.a
-LIBFT_DIR = ./libft
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = push_swap.c swap_functions.c stack_functions.c rotate_functions.c \
@@ -21,26 +19,21 @@ SRCS = push_swap.c swap_functions.c stack_functions.c rotate_functions.c \
 	   fill_positions_functions.c
 
 OBJS = $(SRCS:.c=.o)
-AR = ar rc
 RM = rm -rf
-CP = cp
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(MAKE) -C $(LIBFT_DIR)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 	chmod +x $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) clean -C $(LIBFT_DIR)
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(MAKE) fclean -C $(LIBFT_DIR)
 	$(RM) $(NAME)
 
 re: fclean all

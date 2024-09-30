@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 19:30:42 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 11:19:32 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	manage_stacks(&a, &b);
-	print_stack (a);
 }
 
 void	manage_stacks(t_stack **a, t_stack **b)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_treatment_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/29 18:14:07 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:54:43 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,53 @@ int	is_valid_input(const char *input)
 		{
 			input++;
 			if (!(*input >= '0' && *input <= '9'))
+			{
+				write (2, "Error\n", 6);
 				return (0);
+			}
 		}
 		else if (*input >= '0' && *input <= '9')
 			input++;
 		else
+		{
+			write (2, "Error\n", 6);
 			return (0);
+		}
 	}
 	return (1);
 }
+
+int	ft_atoi(const char *nptr)
+
+{
+	int	i;
+	int	sinal;
+	int	soma;
+
+	i = 0;
+	sinal = 1;
+	soma = 0;
+	while ((nptr[i] == 32) || (nptr[i] >= 9 && nptr[i] <= 13))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		if (nptr[i] == '-')
+			sinal *= -1;
+		i++;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		soma = ((nptr[i] - '0') + (soma * 10));
+		if ((sinal == 1 && soma > INT_MAX) || (sinal == -1 && soma < INT_MIN))
+		{
+			write (2, "Error\n", 6);
+			return (0);
+		}
+		i++;
+	}
+	return ((int)(soma * sinal));
+}
+
 
 bool	has_repeated_numbers(t_stack *stack, int value)
 {

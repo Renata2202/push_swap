@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
+/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/29 18:57:42 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/09/30 12:48:42 by renatanaesi      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdbool.h>
-
-# include "libft/libft.h"
 
 typedef struct s_node
 {
@@ -90,6 +88,7 @@ void	rotate_single(t_stack **a, t_stack **b, int cost_a, int cost_b);
 
 //data_treatment_functions.c
 int		is_valid_input(const char *input);
+int		ft_atoi(const char *nptr);
 bool	has_repeated_numbers(t_stack *stack, int val);
 int		absol_value(int n);
 
