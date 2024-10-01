@@ -6,36 +6,31 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 18:52:05 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:58:21 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_valid_input(const char *input)
+int is_valid_input(const char *input)
 {
-	while (*input)
-	{
-		if (*input == ' ' || *input == '\n' || *input == '\t')
-			input++;
-		else if (*input == '-' || *input == '+')
-		{
-			input++;
-			if (!(*input >= '0' && *input <= '9'))
-			{
-				write (2, "Error\n", 6);
-				return (0);
-			}
-		}
-		else if (*input >= '0' && *input <= '9')
-			input++;
-		else
-		{
-			write (2, "Error\n", 6);
-			return (0);
-		}
-	}
-	return (1);
+    if (*input == '-' || *input == '+')
+        input++;
+    if (!(*input >= '0' && *input <= '9'))
+    {
+        write(2, "Error\n", 6);
+        return (0);
+    }
+    while (*input)
+    {
+        if (!(*input >= '0' && *input <= '9'))
+        {
+            write(2, "Error\n", 6);
+            return (0);
+        }
+        input++;
+    }
+    return (1);
 }
 
 int	ft_atoi(const char *nptr)
@@ -67,30 +62,29 @@ int	is_in_int_range(const char *arg)
 {
 	long long	result;
 	int			sign;
-	long long	int_min;
-	long long	int_max;
 
 	result = 0;
 	sign = 1;
-	int_min = (long long)INT_MIN;
-	int_max = (long long)INT_MAX;
 	if (*arg == '-' || *arg == '+')
-	{
-		if (*arg == '-')
-			sign = -1;
-		arg++;
-	}
-	while (*arg)
-	{
-		result = result * 10 + (*arg - '0');
-		if (sign == 1 && result > int_max)
-			return (0);
-		if (sign == -1 && result < int_min)
-			return (0);
-		arg++;
-	}
-	return (1);
+    {
+        if (*arg == '-')
+            sign = -1;
+        arg++;
+    }
+    while (*arg)
+    {
+        if (*arg < '0' || *arg > '9')
+            return (0);
+        result = result * 10 + (*arg - '0');
+        if (sign == 1 && result > INT_MAX)
+            return (0);
+        if (sign == -1 && -result < INT_MIN)
+            return (0);
+        arg++;
+    }
+    return (1);
 }
+
 
 bool	has_repeated_numbers(t_stack *stack, int value)
 {
