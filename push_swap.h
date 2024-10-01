@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/10/01 19:31:50 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:52:01 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ int		is_in_int_range(const char *arg);
 int		ft_atoi(const char *nptr);
 bool	has_repeated_numbers(t_stack *stack, int val);
 int		absol_value(int n);
-int		has_invalid_characters(const char *input);
 
 // find_target_functions.c
 int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos, int *tp);

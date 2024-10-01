@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:22:16 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 19:33:40 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:51:37 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ void	create_stack(t_stack **stack)
 
 int	check_input(t_stack *stack, char *arg, int *val)
 {
- 	if (has_invalid_characters(arg))
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
 	if (!is_valid_input(arg))
 		return (0);
 	*val = ft_atoi(arg);
@@ -66,17 +61,6 @@ int	check_input(t_stack *stack, char *arg, int *val)
 		return (0);
 	}
 	return (1);
-}
-
-int has_invalid_characters(const char *input)
-{
-	while (*input)
-	{
-		if (!(*input >= '0' && *input <= '9') && *input != '-' && *input != '+')
-			return (1);
-		input++;
-	}
-	return (0);
 }
 
 int	add_to_stack(t_stack *stack, char *arg)
