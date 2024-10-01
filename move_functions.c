@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 12:11:05 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:28:34 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	send_values_to_b(t_stack **a, t_stack **b)
 	print_stack(*b);
 	while (size_a > 3 && size_b < (size_a / 2))
 	{
-		if ((*a)->top->a_goal_pos < (size_a / 2))
+		if ((*a)->top->trg_pos < (size_a / 2))
 		{
 			pb(a, b);
 			size_a--;

@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 11:45:34 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 12:50:32 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,16 @@ void	manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 		get_cost(stack_a, stack_b);
 		do_cheapest_move(stack_a, stack_b);
 	}
-	/*if (!is_sorted_asc(*stack_a))
-	{
-		if ((*stack_a)->top->trg_pos > ((get_stack_size (*stack_a)) / 2))
-			while (!is_sorted_asc(*stack_a))
-				ra(stack_a);
-		if ((*stack_a)->top->trg_pos <= ((get_stack_size (*stack_a)) / 2))
-			while (!is_sorted_asc(*stack_a))
-				rra(stack_a);
-	}*/
+	print_stack(*stack_a);
 }
+	/*while (!is_sorted_asc(*stack_a))
+	{
+		//if ((*stack_a)->top->trg_pos > ((get_stack_size (*stack_a)) / 2))
+				ra(stack_a);
+		//if ((*stack_a)->top->trg_pos <= ((get_stack_size (*stack_a)) / 2))
+				//rra(stack_a);
+	}
+}*/
 void	start_b(t_stack **a, t_stack **b)
 {
 	int	size_a;
