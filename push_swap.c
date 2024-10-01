@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 12:39:23 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:24:03 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	manage_stacks(&a, &b);
-	print_stack(a);
-	print_stack(b);
 	free_stack(a);
-	//print_stack(a);
 }
 
 void	manage_stacks(t_stack **a, t_stack **b)

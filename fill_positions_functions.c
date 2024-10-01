@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fill_positions_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:30 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 15:49:29 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/10/01 14:20:08 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

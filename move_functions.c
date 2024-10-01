@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 13:59:28 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:14:53 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	int		cheapest;
 	int		cost_a;
 	int		cost_b;
+	int		total_cost;
 
 	cost_a = 0;
 	cost_b = 0;
@@ -78,9 +79,10 @@ void	do_cheapest_move(t_stack **stack_a, t_stack **stack_b)
 	cheapest = INT_MAX;
 	while (tmp)
 	{
-		if (absol_value(tmp->cost_a) + absol_value(tmp->cost_b) < cheapest)
+		total_cost = absol_value(tmp->cost_a) + absol_value(tmp->cost_b);
+		if (total_cost < cheapest)
 		{
-			cheapest = absol_value(tmp->cost_b) + absol_value(tmp->cost_a);
+			cheapest = total_cost;
 			cost_a = tmp->cost_a;
 			cost_b = tmp->cost_b;
 		}
