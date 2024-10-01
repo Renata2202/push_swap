@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:26:01 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 14:14:53 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:03:01 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ void	get_value_position(t_stack **stack)
 	t_node	*highest;
 	int		biggest;
 
-	if (stack == NULL || *stack == NULL)
-	{
-		write (2, "Error\n", 6);
-		return ;
-	}
 	aux = (*stack)->top;
 	while (aux != NULL)
 	{

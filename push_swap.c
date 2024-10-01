@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 15:33:35 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:58:18 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	free_stack(t_stack *stack)
 	}
 	free(stack);
 }
+
 int	get_stack_size(t_stack *stack)
 {
 	int		size;
@@ -92,7 +93,10 @@ int	get_stack_size(t_stack *stack)
 	current = stack->top;
 	while (current != NULL)
 	{
-		printf ("value: %d\t, curr_pos: %d\t,cost_a: %d\t, cost_b: %d\t a_goal_pos: %d\t, targ_pos: %d\n", current->val, current->position, current->cost_a, current->cost_b, current->a_goal_pos, current->trg_pos);
+		printf ("value: %d\t, curr_pos: %d\t,cost_a: %d\t,
+		cost_b: %d\t a_goal_pos: %d\t, targ_pos: %d\n",
+		current->val, current->position, current->cost_a,
+		current->cost_b, current->a_goal_pos, current->trg_pos);
 		current = current->next;
 	}
 }*/

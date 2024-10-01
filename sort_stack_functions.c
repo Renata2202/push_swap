@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:33:46 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 15:29:23 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:15:47 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void	manage_big_stack(t_stack **stack_a, t_stack **stack_b)
 				rra(stack_a);
 	}
 }
+
 void	start_b(t_stack **a, t_stack **b)
 {
 	int	size_a;

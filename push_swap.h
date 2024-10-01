@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 14:34:15 by renatanaesi       #+#    #+#             */
-/*   Updated: 2024/09/30 15:48:40 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/10/01 19:31:50 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,10 @@ int		is_in_int_range(const char *arg);
 int		ft_atoi(const char *nptr);
 bool	has_repeated_numbers(t_stack *stack, int val);
 int		absol_value(int n);
+int		has_invalid_characters(const char *input);
 
 // find_target_functions.c
-int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos);
-int		find_target_greater(t_stack **a, int b_targ_pos, int *a_goal_pos);
-int		find_target_lesser(t_stack **a, int *a_goal_pos);
+int		get_trg_a(t_stack **a, int b_targ_pos, int a_goal_pos, int *tp);
 
 // push_swap.c
 int		main(int argc, char **argv);

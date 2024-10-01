@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data_treatment_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: renatanaesilva <renatanaesilva@student.    +#+  +:+       +#+        */
+/*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:11:05 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 14:11:03 by renatanaesi      ###   ########.fr       */
+/*   Updated: 2024/10/01 18:52:05 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	is_valid_input(const char *input)
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sinal;
+	int			i;
+	int			sinal;
 	long long	soma;
 
 	i = 0;
@@ -65,29 +65,31 @@ int	ft_atoi(const char *nptr)
 
 int	is_in_int_range(const char *arg)
 {
-    long long result = 0;
-    int sign = 1;
-    const long long int_min = (long long)INT_MIN;
-    const long long int_max = (long long)INT_MAX;
+	long long	result;
+	int			sign;
+	long long	int_min;
+	long long	int_max;
 
-    if (*arg == '-' || *arg == '+')
-    {
-        if (*arg == '-')
-            sign = -1;
-        arg++;
-    }
-    while (*arg)
-    {
-        if (*arg < '0' || *arg > '9')
-            return (0);
-        result = result * 10 + (*arg - '0');
-        if (sign == 1 && result > int_max)
-            return (0);
-        if (sign == -1 && -result < int_min)
-            return (0);
-        arg++;
-    }
-    return (1);
+	result = 0;
+	sign = 1;
+	int_min = (long long)INT_MIN;
+	int_max = (long long)INT_MAX;
+	if (*arg == '-' || *arg == '+')
+	{
+		if (*arg == '-')
+			sign = -1;
+		arg++;
+	}
+	while (*arg)
+	{
+		result = result * 10 + (*arg - '0');
+		if (sign == 1 && result > int_max)
+			return (0);
+		if (sign == -1 && result < int_min)
+			return (0);
+		arg++;
+	}
+	return (1);
 }
 
 bool	has_repeated_numbers(t_stack *stack, int value)
