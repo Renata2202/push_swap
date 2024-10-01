@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/10/01 15:24:03 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:26:05 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	get_stack_size(t_stack *stack)
 	}
 	return (size);
 }
-void	print_stack(t_stack *stack)
+/*void	print_stack(t_stack *stack)
 {
 	t_node	*current;
 
@@ -95,4 +95,4 @@ void	print_stack(t_stack *stack)
 		printf ("value: %d\t, curr_pos: %d\t,cost_a: %d\t, cost_b: %d\t a_goal_pos: %d\t, targ_pos: %d\n", current->val, current->position, current->cost_a, current->cost_b, current->a_goal_pos, current->trg_pos);
 		current = current->next;
 	}
-}
+}*/
