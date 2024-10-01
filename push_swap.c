@@ -6,7 +6,7 @@
 /*   By: rnunes-a <rnunes-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:27:44 by rnunes-a          #+#    #+#             */
-/*   Updated: 2024/09/30 20:14:58 by rnunes-a         ###   ########.fr       */
+/*   Updated: 2024/10/01 10:41:50 by rnunes-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	print_stack(t_stack *stack)
 	current = stack->top;
 	while (current != NULL)
 	{
-		printf ("%d\n", current->val);
+		printf ("value: %d\t, curr_pos: %d\t, targ_pod: \t%d\n", current->val, current->position, current->trg_pos);
 		current = current->next;
 	}
 }
